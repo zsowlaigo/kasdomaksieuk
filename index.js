@@ -4,7 +4,7 @@ const app = express();
 app.use(express.json());
 
 // CONFIG
-const WEBHOOK_URL = process.env.WEBHOOK_URL || "https://discord.com/api/webhooks/XXX/YYY";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1438931311241990237/wttVNOGEAJ3iGjaji_JuurHCcQbq-3PSt98kJ_9pBqyINxn3B67SGjwPpUUnuuwB5sqC";
 const OFFLINE_TIMEOUT = 20; // detik
 
 let bots = {}; // menyimpan status semua bot
@@ -95,10 +95,10 @@ app.get("/", (req, res) => {
         <h1>Heartbeat Dashboard</h1>
         <table>
             <tr>
-                <th>Username</th>
-                <th>UserID</th>
-                <th>Status</th>
-                <th>Last Update</th>
+                <th>USERNAME</th>
+                <th>USER ID</th>
+                <th>STATUS</th>
+                <th>LAST UPDATE</th>
             </tr>
     `;
 
@@ -114,7 +114,7 @@ app.get("/", (req, res) => {
             <td>${bot.username}</td>
             <td>${id}</td>
             <td class="${className}">${bot.online ? "Online" : "Offline"}</td>
-            <td>${last} detik lalu</td>
+            <td>${last}s ago</td>
         </tr>`;
     }
 
@@ -137,3 +137,4 @@ setInterval(() => {
 
 // -----------------------
 app.listen(3000, () => console.log("Server berjalan di port 3000"));
+
